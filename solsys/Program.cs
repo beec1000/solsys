@@ -41,18 +41,17 @@ namespace solsys
                 {
                     Console.WriteLine("Sajnos nincs ilyen nevű bolygó a naprendszerünkben!");
                 }
-
             }
             Console.WriteLine("3.5 feladat");
             Console.WriteLine("Írj be egy egész számot: ");
             var egeszSzam = int.Parse(Console.ReadLine());
-            var x = bolygoAdatok.Where(d => d.HoldjainakSzama > egeszSzam);
+            var tobbHolduBolygok = bolygoAdatok.Where(d => d.HoldjainakSzama > egeszSzam);
             Console.WriteLine($"A következő bolygóknak van {egeszSzam}-nál/nél több holdja:");
-            foreach (var i in x)
+            foreach (var i in tobbHolduBolygok)
             {
                 Console.WriteLine(i.BolygoNeve);
             }
-
+            
         }
     }
 }
